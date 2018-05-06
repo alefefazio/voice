@@ -9,4 +9,6 @@ urlpatterns = [
 
     url(r'^api/add_todo$', views.add_todo),
     url(r'^api/list_todos$', views.list_todos),
+    url(r'^api/slack/message_actions$', views.message_actions),
+    url(r'^api/slack/message_options$', views.message_options),
 ]
