@@ -29,3 +29,24 @@ class Todo(models.Model):
             'description': self.description,
             'done': self.done,
         }
+
+
+class Personality(models.Model):
+    name = models.CharField(max_length=128)
+    abstract = models.TextField()
+
+
+class Question(models.Model):
+    question = models.TextField()
+
+
+class Choice(models.Model):
+    choice = models.TextField()
+    Personality = models.ForeignKey(
+        'Personality',
+        on_delete=models.CASCADE,
+    )
+    Question = models.ForeignKey(
+        'Question',
+        on_delete=models.CASCADE,
+    )
