@@ -35,9 +35,15 @@ class Personality(models.Model):
     name = models.CharField(max_length=128)
     abstract = models.TextField()
 
+    def __str__(self):
+        return str(self.name)
+
 
 class Question(models.Model):
     question = models.TextField()
+
+    def __str__(self):
+        return str(self.question)
 
 
 class Choice(models.Model):
