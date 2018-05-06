@@ -3,7 +3,7 @@ RESTORE='\033[0m'
 RED='\033[00;31m'
 GREEN='\033[00;32m'
 YELLOW='\e[0;33m'
-HOST_PROD=voice.example.com
+HOST_PROD=18.217.83.169
 
 # Because nobody wants to be memorizing commands all the time
 # Instructions:
