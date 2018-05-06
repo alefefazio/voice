@@ -36,7 +36,7 @@ class Personality(models.Model):
     abstract = models.TextField()
 
     def __str__(self):
-        return str(self.name)
+        return str(self.id)
 
 
 class Question(models.Model):
