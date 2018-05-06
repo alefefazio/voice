@@ -1,4 +1,5 @@
 # coding: utf-8
+import os
 import json
 from django.http.response import HttpResponse, JsonResponse
 from django.contrib import auth
@@ -8,8 +9,8 @@ from core.service import log_svc, todo_svc
 from django.views.decorators.csrf import csrf_exempt
 from slackclient import SlackClient
 # Your app's Slack bot user token
-SLACK_BOT_TOKEN = "xoxb-359149458901-2lvzviKghnCljvmuulW2S2VQ"
-SLACK_VERIFICATION_TOKEN = "YZh3oIvSkfmXHnEw9zy2CBAq"
+SLACK_BOT_TOKEN = os.getenv('SLACK_BOT_TOKEN', 'bot_token')
+SLACK_VERIFICATION_TOKEN = os.getenv('SLACK_VERIFICATION_TOKEN', 'verification_token')
 
 # Slack client for Web API requests
 slack_client = SlackClient(SLACK_BOT_TOKEN)
@@ -157,5 +158,5 @@ def send_message():
     text = "O que fazer",
     attachments=attachments_json
     )
-    
+
 send_message()
