@@ -6,7 +6,13 @@ from commons.django_model_utils import get_or_none
 from commons.django_views_utils import ajax_login_required
 from core.service import log_svc, todo_svc
 from django.views.decorators.csrf import csrf_exempt
+from slackclient import SlackClient
+# Your app's Slack bot user token
+SLACK_BOT_TOKEN = "xoxb-359149458901-2lvzviKghnCljvmuulW2S2VQ"
+SLACK_VERIFICATION_TOKEN = "YZh3oIvSkfmXHnEw9zy2CBAq"
 
+# Slack client for Web API requests
+slack_client = SlackClient(SLACK_BOT_TOKEN)
 
 def dapau(request):
     raise Exception('break on purpose')
