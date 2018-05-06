@@ -36,14 +36,14 @@ class Personality(models.Model):
     abstract = models.TextField()
 
     def __str__(self):
-        return str(self.id)
+        return str(self.name)
 
 
 class Question(models.Model):
     question = models.TextField()
 
     def __str__(self):
-        return str(self.question)
+        return str(self.id)
 
 
 class Choice(models.Model):
